@@ -10,14 +10,22 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #f8f4f1; /* Warmer background */
         }
         
         .header {
-            background-color: #2c3e50;
+            background-color: #8b5e3c; /* Warm brown */
             color: white;
             padding: 2rem;
             text-align: center;
+            background-image: linear-gradient(rgba(139, 94, 60, 0.9), rgba(139, 94, 60, 0.9)), url('Assets/pic1.jpg');
+            background-size: cover;
+            background-position: center;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            animation: fadeIn 1.5s ease-out;
         }
         
         .container {
@@ -29,53 +37,385 @@
         .experience-card {
             background-color: white;
             border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(139, 94, 60, 0.1);
             margin: 2rem 0;
             padding: 2rem;
+            transition: transform 0.3s ease;
+            max-width: 1200px;
+            margin: 0 auto;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-5px);
+            animation: floatUp 2s ease-in-out infinite;
         }
         
         .experience-image {
-            max-width: 100%;
+            width: 60%;
+            max-width: 60%;
             height: auto;
             border-radius: 8px;
             margin: 1rem 0;
+            display: block;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+            align-items: start;
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            animation: fadeIn 1s ease-out;
+            animation-delay: 0.5s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        
+        .gallery-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(139, 94, 60, 0.2);
         }
         
         .title {
-            color: #2c3e50;
+            color: #6b4423;
             margin-bottom: 1rem;
+            font-size: 2.5rem;
         }
         
         .subtitle {
-            color: #7f8c8d;
-            font-size: 1.2rem;
+            color: #a67c52;
+            font-size: 1.4rem;
         }
         
         .description {
-            color: #34495e;
+            color: #5a4434;
             text-align: justify;
+            font-size: 1.1rem;
+        }
+        
+        .description h3 {
+            color: #8b5e3c;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        
+        .description p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .contact-section {
+            background-color: #714e32; /* Deep warm brown */
+            color: #f8f4f1; /* Light warm color */
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+        
+        .contact-item {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: fadeIn 0.8s ease-out;
+            animation-delay: calc(var(--item-index) * 0.2s);
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+            animation: glow 2s ease-in-out infinite;
+        }
+        
+        /* Warm accent colors for icons */
+        .contact-item i {
+            color: #d4b08c; /* Light warm accent */
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background-color: #5a4434; /* Rich warm brown */
+            color: #f8f4f1;
+            text-align: center;
+            padding: 1rem;
+        }
+        
+        .contact-image-wrapper {
+            width: 100%;
+            padding-top: 100%;
+            position: relative;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        
+        .contact-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background-color: white;
+            padding: 10px;
+        }
+        
+        .contact-item:hover .contact-image {
+            transform: scale(1.05);
+        }
+        
+        /* Social grid separator */
+        .social-grid {
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 3rem;
+        }
+        
+        /* Mobile-friendly adjustments */
+        @media screen and (max-width: 768px) {
+            .header {
+                min-height: 300px;
+                padding: 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2.5rem !important;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .experience-card {
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+            
+            .experience-image {
+                width: 100%;
+                height: auto;
+            }
+            
+            .gallery-image {
+                width: 100%;
+                height: auto;
+            }
+            
+            .title {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .description {
+                font-size: 1rem;
+            }
+            
+            .contact-section {
+                padding: 2rem 1rem;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .contact-item {
+                padding: 0.5rem;
+            }
+            
+            .contact-image-wrapper {
+                padding-top: 100%;
+            }
+            
+            .contact-item {
+                margin: 0.5rem;
+            }
+        }
+        
+        /* Additional improvements for very small screens */
+        @media screen and (max-width: 480px) {
+            .header h1 {
+                font-size: 2rem !important;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .experience-image {
+                height: 250px;
+            }
+        }
+        
+        /* Add these new animation keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes floatUp {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px rgba(139, 94, 60, 0.2); }
+            50% { box-shadow: 0 0 20px rgba(139, 94, 60, 0.4); }
+            100% { box-shadow: 0 0 5px rgba(139, 94, 60, 0.2); }
+        }
+        
+        /* Add these to existing elements */
+        .experience-card {
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .experience-card:hover {
+            animation: floatUp 2s ease-in-out infinite;
+        }
+        
+        .gallery-image {
+            animation: fadeIn 1s ease-out;
+            animation-delay: 0.5s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        
+        .contact-item {
+            animation: fadeIn 0.8s ease-out;
+            animation-delay: calc(var(--item-index) * 0.2s);
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        
+        .contact-item:hover {
+            animation: glow 2s ease-in-out infinite;
+        }
+        
+        /* Add smooth transitions */
+        .gallery-image, .contact-item, .experience-card {
+            transition: all 0.3s ease-in-out;
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header class="header">
-        <h1>Sacred Flow Energy</h1>
-        <p class="subtitle">A Journey of Spiritual Healing and Growth</p>
+        <h1 class="title" style="color: white; font-size: 3.5rem;">Sacred Flow Energy</h1>
+        <p class="subtitle" style="color: white;">A Journey of Spiritual Healing and Growth</p>
     </header>
 
     <div class="container">
         <div class="experience-card">
             <h2 class="title">Transformative Experience in Brazil - July 2019</h2>
-            <img src="Assets/2019Jul-Brazil.jpg" alt="Healing Session with Master Healer Deushina" class="experience-image">
+            <img src="Assets/pic1.jpg" alt="Healing Session with Master Healer Deushina" class="experience-image">
             <div class="description">
                 <p>In July 2019, I had the profound privilege of working with master healer Deushina in Brazil. This transformative experience marked a significant milestone in my spiritual journey and healing practice.</p>
                 <p>During our time together, I learned ancient healing techniques and wisdom that have been passed down through generations. The experience deepened my understanding of energy work and spiritual healing, enhancing my ability to facilitate healing for others.</p>
             </div>
         </div>
+
+        <div class="image-gallery">
+            <img src="Assets/pic2.jpg" alt="Sacred Flow Energy Experience 2" class="gallery-image">
+            <img src="Assets/pic3.jpg" alt="Sacred Flow Energy Experience 3" class="gallery-image">
+        </div>
     </div>
 
-    <footer class="header">
+    <section class="contact-section">
+        <h2>Connect With Us</h2>
+
+        
+        <div class="contact-grid social-grid">
+            <div class="contact-item">
+                <div class="contact-image-wrapper">
+                    <img src="Assets/whatsapp-qr.jpg" alt="WhatsApp QR Code" class="contact-image">
+                </div>
+                <i class="fab fa-whatsapp"></i>
+                <h3>WhatsApp</h3>
+                <p>Francine Ma</p>
+            </div>
+            <div class="contact-item">
+                <div class="contact-image-wrapper">
+                    <img src="Assets/wechat-qr.jpg" alt="WeChat QR Code" class="contact-image">
+                </div>
+                <i class="fab fa-weixin"></i>
+                <h3>WeChat</h3>
+                <p>Scan to Connect</p>
+            </div>
+            <div class="contact-item">
+                <div class="contact-image-wrapper">
+                    <img src="Assets/telegram-qr.jpg" alt="Telegram QR Code" class="contact-image">
+                </div>
+                <i class="fab fa-telegram"></i>
+                <h3>Telegram</h3>
+                <p>Scan to Message</p>
+            </div>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <div class="contact-image-wrapper">
+                    <!-- <img src="Assets/contact1.jpg" alt="Sacred Flow Energy Contact" class="contact-image"> -->
+                </div>
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p>sacredflowenergy@gmail.com</p>
+            </div>
+            <div class="contact-item">
+                <div class="contact-image-wrapper">
+                    <!-- <img src="Assets/contact2.jpg" alt="Sacred Flow Energy Phone" class="contact-image"> -->
+                </div>
+                <i class="fas fa-phone"></i>
+                <h3>Phone</h3>
+                <p>+1 (555) 123-4567</p>
+            </div>
+            <div class="contact-item">
+                <div class="contact-image-wrapper">
+                    <!-- <img src="Assets/contact3.jpg" alt="Sacred Flow Energy Location" class="contact-image"> -->
+                </div>
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Location</h3>
+                <p>New Jersey</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
         <p>© 2024 Sacred Flow Energy. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Add animation delay index to contact items
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactItems = document.querySelectorAll('.contact-item');
+            contactItems.forEach((item, index) => {
+                item.style.setProperty('--item-index', index);
+            });
+        });
+    </script>
 </body>
 </html>
