@@ -678,3 +678,37 @@ h1, h2, h3 {
         margin-top: 1.5rem;
     }
 }
+
+.energy-types-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 1rem 0;
+}
+
+.energy-types-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.4;
+}
+
+.energy-types-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #8b5e3c;
+}
+
+.energy-types-list strong {
+    color: #6b4423;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .energy-types-list li {
+        margin-bottom: 0.8rem;
+        font-size: 0.95rem;
+        padding-left: 1.25rem;
+    }
+}
