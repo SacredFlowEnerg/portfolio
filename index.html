@@ -4,345 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sacred Flow Energy - Spiritual Healing Journey</title>
-    <style>
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f4f1; /* Warmer background */
-        }
-        
-        .header {
-            background-color: #8b5e3c; /* Warm brown */
-            color: white;
-            padding: 2rem;
-            text-align: center;
-            background-image: linear-gradient(rgba(139, 94, 60, 0.9), rgba(139, 94, 60, 0.9)), url('Assets/pic1.jpg');
-            background-size: cover;
-            background-position: center;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            animation: fadeIn 1.5s ease-out;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        .experience-card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(139, 94, 60, 0.1);
-            margin: 2rem 0;
-            padding: 2rem;
-            transition: transform 0.3s ease;
-            max-width: 1200px;
-            margin: 0 auto;
-            animation: fadeIn 1s ease-out;
-        }
-        
-        .experience-card:hover {
-            transform: translateY(-5px);
-            animation: floatUp 2s ease-in-out infinite;
-        }
-        
-        .experience-image {
-            width: 60%;
-            max-width: 60%;
-            height: auto;
-            border-radius: 8px;
-            margin: 1rem 0;
-            display: block;
-        }
-        
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-            align-items: start;
-        }
-        
-        .gallery-image {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-            animation: fadeIn 1s ease-out;
-            animation-delay: 0.5s;
-            opacity: 0;
-            animation-fill-mode: forwards;
-        }
-        
-        .gallery-image:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(139, 94, 60, 0.2);
-        }
-        
-        .title {
-            color: #6b4423;
-            margin-bottom: 1rem;
-            font-size: 2.5rem;
-        }
-        
-        .subtitle {
-            color: #a67c52;
-            font-size: 1.4rem;
-        }
-        
-        .description {
-            color: #5a4434;
-            text-align: justify;
-            font-size: 1.1rem;
-        }
-        
-        .description h3 {
-            color: #8b5e3c;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-        }
-        
-        .description p {
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-        
-        .contact-section {
-            background-color: #714e32; /* Deep warm brown */
-            color: #f8f4f1; /* Light warm color */
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 2rem auto;
-        }
-        
-        .contact-item {
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 15px;
-            padding: 1.5rem;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            animation: fadeIn 0.8s ease-out;
-            animation-delay: calc(var(--item-index) * 0.2s);
-            opacity: 0;
-            animation-fill-mode: forwards;
-        }
-        
-        .contact-item:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.2);
-            animation: glow 2s ease-in-out infinite;
-        }
-        
-        /* Warm accent colors for icons */
-        .contact-item i {
-            color: #d4b08c; /* Light warm accent */
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        footer {
-            background-color: #5a4434; /* Rich warm brown */
-            color: #f8f4f1;
-            text-align: center;
-            padding: 1rem;
-        }
-        
-        .contact-image-wrapper {
-            width: 100%;
-            padding-top: 100%;
-            position: relative;
-            margin-bottom: 1.5rem;
-            overflow: hidden;
-            border-radius: 10px;
-        }
-        
-        .contact-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            background-color: white;
-            padding: 10px;
-        }
-        
-        .contact-item:hover .contact-image {
-            transform: scale(1.05);
-        }
-        
-        /* Social grid separator */
-        .social-grid {
-            margin-top: 3rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            padding-top: 3rem;
-        }
-        
-        /* Mobile-friendly adjustments */
-        @media screen and (max-width: 768px) {
-            .header {
-                min-height: 300px;
-                padding: 1rem;
-            }
-            
-            .header h1 {
-                font-size: 2.5rem !important;
-            }
-            
-            .container {
-                padding: 1rem;
-            }
-            
-            .experience-card {
-                padding: 1rem;
-                margin: 1rem 0;
-            }
-            
-            .experience-image {
-                width: 100%;
-                height: auto;
-            }
-            
-            .gallery-image {
-                width: 100%;
-                height: auto;
-            }
-            
-            .title {
-                font-size: 2rem;
-            }
-            
-            .subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .description {
-                font-size: 1rem;
-            }
-            
-            .contact-section {
-                padding: 2rem 1rem;
-            }
-            
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
-            .contact-item {
-                padding: 0.5rem;
-            }
-            
-            .contact-image-wrapper {
-                padding-top: 100%;
-            }
-            
-            .contact-item {
-                margin: 0.5rem;
-            }
-        }
-        
-        /* Additional improvements for very small screens */
-        @media screen and (max-width: 480px) {
-            .header h1 {
-                font-size: 2rem !important;
-            }
-            
-            .subtitle {
-                font-size: 1rem;
-            }
-            
-            .experience-image {
-                height: 250px;
-            }
-        }
-        
-        /* Add these new animation keyframes */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes floatUp {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0); }
-        }
-        
-        @keyframes glow {
-            0% { box-shadow: 0 0 5px rgba(139, 94, 60, 0.2); }
-            50% { box-shadow: 0 0 20px rgba(139, 94, 60, 0.4); }
-            100% { box-shadow: 0 0 5px rgba(139, 94, 60, 0.2); }
-        }
-        
-        /* Add these to existing elements */
-        .experience-card {
-            animation: fadeIn 1s ease-out;
-        }
-        
-        .experience-card:hover {
-            animation: floatUp 2s ease-in-out infinite;
-        }
-        
-        .gallery-image {
-            animation: fadeIn 1s ease-out;
-            animation-delay: 0.5s;
-            opacity: 0;
-            animation-fill-mode: forwards;
-        }
-        
-        .contact-item {
-            animation: fadeIn 0.8s ease-out;
-            animation-delay: calc(var(--item-index) * 0.2s);
-            opacity: 0;
-            animation-fill-mode: forwards;
-        }
-        
-        .contact-item:hover {
-            animation: glow 2s ease-in-out infinite;
-        }
-        
-        /* Add smooth transitions */
-        .gallery-image, .contact-item, .experience-card {
-            transition: all 0.3s ease-in-out;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header class="header">
         <h1 class="title" style="color: white; font-size: 3.5rem;">Sacred Flow Energy</h1>
-        <p class="subtitle" style="color: white;">A Journey of Spiritual Healing and Growth</p>
+        <p class="subtitle" style="color: white;">Energy Practitioner & Space Harmonizer</p>
     </header>
 
     <div class="container">
         <div class="experience-card">
-            <h2 class="title">Transformative Experience in Brazil - July 2019</h2>
-            <img src="Assets/pic1.jpg" alt="Healing Session with Master Healer Deushina" class="experience-image">
+            <h2 class="title">Welcome to Sacred Flow Energy</h2>
+            <img src="Assets/pic1.jpg" alt="Energy Practitioner Francine" class="experience-image">
+            <div class="description bilingual-content">
+                <div class="english-text">
+                    <p>I am Francine, an energy practitioner with a deep passion for helping people transform their spaces and lives through higher-dimensional energy. My journey began with Geobiology personal clearing, which opened the door to advanced energy techniques. Today, I specialize in remote energy clearing and boosting, creating harmonious, vibrant environments in homes, businesses, and even agricultural spaces. My work is heart-centered and rooted in sacred geometry, blending ancient wisdom with modern approaches to elevate energetic frequencies.</p>
+                    <p>Throughout this site, you may notice that I say "we." This is because I do not work alone—I collaborate with higher energetic beings and elementals who support and enhance the clearing process. These compassionate energies assist in releasing negativity, restoring balance, and elevating spaces to their highest vibrational potential. Their presence ensures that every clearing is carried out with unconditional love, precision, and profound effectiveness.</p>
+                    <p>Witnessing the profound shifts my clients experience—both in their spaces and in their lives—is truly rewarding. It is an honor to guide others on this journey of balance, clarity, and transformation.</p>
+                </div>
+                
+                <div class="chinese-text">
+                    <p>我是弗朗辛，我是⼀名能量实践者，热衷于帮助⼈们通过⾼维能量转化他们的空间和⽣活。我的旅程始于地球⽣物学的个⼈净化，这为我探索更⾼级的能量技术打开了⼤门。如今，我专注于远程能量净化与增强，致⼒于为家庭、商业场所，甚至农业环境创造和谐、充满⽣机的能量场。我的⼯作以⼼为中⼼，植根于神圣⼏何学，将古老智慧与现代⽅法相结合，以提升空间的能量频率。</p>
+                    <p>在浏览本网站时，您可能会注意到我经常使⽤"我们"⼀词。这是因为我并⾮独⾃⼯作——我与⾼维能量存有和元素精灵合作，共同⽀持和强化净化过程。这些充满爱与慈悲的存有帮助释放负⾯能量、恢复平衡，并提升空间的最⾼振动潜能。他们的存在确保每⼀次净化都以⽆条件的爱、精确度和深远的效果来完成。</p>
+                    <p>⻅证我的客户在空间和⽣活中经历的深刻变化让我倍感欣慰。我很荣幸能引导他⼈踏上这条平衡、清晰与转化的旅程。</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="experience-card">
+
             <div class="description">
-                <p>In July 2019, I had the profound privilege of working with master healer Deushina in Brazil. This transformative experience marked a significant milestone in my spiritual journey and healing practice.</p>
-                <p>During our time together, I learned ancient healing techniques and wisdom that have been passed down through generations. The experience deepened my understanding of energy work and spiritual healing, enhancing my ability to facilitate healing for others.</p>
+                <img src="Assets/pic9.jpg" alt="Sacred Flow Energy Experience 9" class="experience-image">
+                <p>Higher-dimensional energy provides an effortless way to create harmony in your home or business. Unlike traditional methods that require rearranging furniture or modifying entrances, this approach works directly with the energetic field of your space. Negative energies and spirits are compassionately cleared, restoring balance and vitality to your environment. Because no physical changes are needed, this method is both efficient and convenient. Remote services further enhance accessibility, allowing consultations and clearings to be conducted seamlessly—without in-person visits or complex requirements.</p>
+            </div>
+        </div>
+
+        <div class="experience-card">
+            <img src="Assets/pic8.jpg" alt="Sacred Flow Energy Experience 8" class="experience-image">
+            <h2 class="title">The Transformative Power of Higher-Dimensional Energy</h2>
+            <div class="description">
+                <p>While both approaches have their benefits, higher-dimensional energy transcends the physical realm to create deep, lasting energetic harmony. By working remotely, it offers a modern, effective, and transformative path to well-being, enriched relationships, and greater abundance—all with minimal effort on your part.</p>
+            </div>
+
+            <h2 class="title">Energies Cleared by Higher-Dimensional Energy</h2>
+            <div class="description">
+                <p>Creating a Balanced and Harmonious Environment
+                    Every space holds energetic imprints from its environment and history. Higher-dimensional energy goes beyond traditional cleansing methods, offering a comprehensive and transformative approach to clearing various negative energies. By harmonizing and elevating your space's energy, this process promotes well-being, deeper sleep, and greater harmony in all aspects of life.</p>
+            </div>
+
+            <h2 class="title">Types of Energies Cleared</h2>
+            <div class="description">
+                <p>Harmful Electrical Green Energy: Neutralizes emissions from Wi-Fi, printers, and lights, reducing their impact on your health.
+                    Underground Water Disturbance: Resolves energetic imbalances caused by underground water, improving grounding and sleep quality.
+                    Negative Hartmann Lines: Restores Earth's meridian lines to a positive state, enhancing health and vitality.
+                    Geopathic Stress Lines: Clears negative energy from these stress points without altering your property's physical layout.
+                    External Negativity: Shields your space from disruptive sources such as power plants, cell towers, or negative influences from neighbors.
+                    Black Energy and Dark Portals: Removes black magic and closes lower-dimensional portals, ensuring a safe and protected environment.
+                    Spiritual Entities and Thought Forms: Releases low-vibrational entities and dissolves emotional residue, leaving your space fresh, light, and positive.</p>
+            </div>
+            
+            <h2 class="title">Achieving Lasting Harmony with Higher-Dimensional Energyy</h2>
+            <div class="description">
+                <p>By resolving energetic imbalances at their core, higher-dimensional energy cultivates a harmonious, uplifting environment for your home or business. This transformative process enhances clarity, well-being, and lasting energetic balance, allowing your space to support and nurture you effortlessly.</p>
+            </div>
+            <h2 class="title">The Transformative Power of  higher dimension energy</h2>
+            <div class="description">
+                <p>Both approaches offer valuable benefits, but higher dimension energy goes beyond the physical to deliver profound, lasting energetic harmony. By improving your space remotely, it provides a modern, effective, and transformative path to well-being, enhanced relationships, and greater abundance—all with minimal effort on your part.</p>
+            </div>
+        </div>
+
+        <div class="experience-card">
+            <h2 class="title">What Can Higher Dimension Energy Do for Your Business?</h2>
+            <div class="description">
+                <h3>Unlock Your Business's Potential with Higher Dimension Energy</h3>
+                <p>The energy of your business environment plays a pivotal role in shaping productivity, employee satisfaction, and overall success. Higher dimension energy offers a transformative approach that enhances your workplace, creating a harmonious and inspiring atmosphere that drives growth and success. With remote services and long-lasting results, this seamless solution elevates your business to new heights.</p>
+                
+                <h3>How Higher Dimension Energy Benefits Your Business:</h3>
+                <ul class="benefits-list">
+                    <li>Boosts Employee Morale & Engagement: Fosters a positive, energized atmosphere that increases job satisfaction and overall well-being.</li>
+                    <li>Enhances Productivity & Focus: Creates an environment where employees are motivated, focused, and work more efficiently.</li>
+                    <li>Stimulates Creativity & Innovation: Promotes fresh ideas and forward-thinking solutions to keep your business ahead of the curve.</li>
+                    <li>Improves Communication & Collaboration: Strengthens teamwork and nurtures a culture of openness and support.</li>
+                    <li>Reduces Stress & Conflict: Alleviates workplace tensions, creating a peaceful and balanced environment.</li>
+                    <li>Strengthens Leadership & Decision-Making: Helps leaders make more effective decisions and inspire their teams.</li>
+                    <li>Enhances Company Culture & Reputation: Builds a strong, positive brand image that attracts both talent and customers.</li>
+                    <li>Attracts & Retains Top Talent: Creates a workplace where people are motivated to stay and grow with your company.</li>
+                    <li>Supports Sustainable Growth: Opens up new opportunities and pathways for business expansion.</li>
+                    <li>Creates a Welcoming Environment for Clients: Elevates your business image and fosters long-term relationships with clients and partners.</li>
+                    <li>Builds Lasting Clientele & Partnerships: Attracts high-quality, loyal customers who trust and believe in your vision.</li>
+                </ul>
+
+                <h3>Gain a Competitive Edge with Elevated Energy</h3>
+                <p>By aligning your business space with higher-vibrational energy, you empower your team and create a thriving environment for success. The benefits are far-reaching—from boosting employee well-being to enhancing client relationships, this energy-driven approach fosters growth, innovation, and prosperity. Embrace higher dimension energy and unlock your business's true potential.</p>
             </div>
         </div>
 
         <div class="image-gallery">
             <img src="Assets/pic2.jpg" alt="Sacred Flow Energy Experience 2" class="gallery-image">
             <img src="Assets/pic3.jpg" alt="Sacred Flow Energy Experience 3" class="gallery-image">
+            <img src="Assets/pic4.jpg" alt="Sacred Flow Energy Experience 4" class="gallery-image  position-adjust">
+            <img src="Assets/pic5.jpg" alt="Sacred Flow Energy Experience 5" class="gallery-image">
+            <img src="Assets/pic6.jpg" alt="Sacred Flow Energy Experience 6" class="gallery-image">
+            <img src="Assets/pic7.jpg" alt="Sacred Flow Energy Experience 7" class="gallery-image">
+
+
+        </div>
+
+        <div class="media-bookmark">
+            <h2 class="title">Learn More About Sacred Flow Energy</h2>
+            <div class="bookmark-container">
+                <a href="https://mp.weixin.qq.com/s/BdWwnHXWoeL-hoEbvHZwyw" target="_blank" class="bookmark-link">
+                    <div class="bookmark-preview">
+                        <div class="bookmark-content">
+                            <div class="bookmark-icon">
+                                <i class="fab fa-weixin"></i>
+                            </div>
+                            <div class="bookmark-text">
+                                <span>Read Our WeChat Article</span>
+                                <p class="bookmark-description">Discover more about Sacred Flow Energy's transformative approach to space harmonization</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 
