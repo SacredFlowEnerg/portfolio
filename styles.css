@@ -69,9 +69,9 @@ body {
 
 .gallery-image {
     width: 100%;
-    height: 400px;  /* Increased height for better framing */
+    height: 400px;
     object-fit: cover;
-    object-position: center 40%;  /* Adjusted to move focus point down */
+    object-position: center 20%;  /* Default position */
     border-radius: 8px;
     transition: transform 0.3s ease;
 }
@@ -79,6 +79,26 @@ body {
 .gallery-image:hover {
     transform: scale(1.05);
     box-shadow: 0 5px 20px rgba(139, 94, 60, 0.2);
+}
+
+.gallery-image-container {
+    position: relative;
+    width: 100%;
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(139, 94, 60, 0.8);
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
 .title {
@@ -302,6 +322,11 @@ footer {
     .chinese-text {
         padding-top: 1rem;
     }
+
+    .gallery-caption {
+        font-size: 0.8rem;
+        padding: 0.4rem;
+    }
 }
 
 /* Additional improvements for very small screens */
@@ -459,4 +484,49 @@ footer {
         align-items: center;
         text-align: center;
     }
+}
+
+/* Base text wrapping styles */
+p, h1, h2, h3, span, li, a {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.description p, 
+.bookmark-description,
+.bookmark-content span,
+.chinese-text p,
+.english-text p,
+.benefits-list li,
+.contact-item p,
+.contact-item h3 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .description p, 
+    .bookmark-description,
+    .chinese-text p,
+    .english-text p {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+        max-width: 100%;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+}
+
+/* Add specific class for the Deushina image */
+.position-adjust-down {
+    object-position: center 70%; /* Moves focus point further down */
+}
+
+/* Add this class for the Brazil journey image */
+.position-adjust-up {
+    object-position: center 10%; /* Moves focus point up */
 }
