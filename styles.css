@@ -100,14 +100,14 @@ body {
 
 .description h3 {
     color: #8b5e3c;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
     font-size: 1.8rem;
 }
 
 .description p {
-    margin-bottom: 1.5rem;
-    line-height: 1.8;
+    margin-bottom: 1rem;
+    line-height: 1.4;
 }
 
 .contact-section {
@@ -225,19 +225,19 @@ footer {
     
     .description {
         font-size: 0.95rem;
-        line-height: 1.5;
-        margin-bottom: 1rem;
+        line-height: 1.3;
+        margin-bottom: 0.75rem;
     }
     
     .description h3 {
         font-size: 1.4rem;
-        margin-top: 1.5rem;
-        margin-bottom: 0.75rem;
+        margin-top: 1.25rem;
+        margin-bottom: 0.5rem;
     }
     
     .description p {
-        margin-bottom: 1rem;
-        line-height: 1.6;
+        margin-bottom: 0.75rem;
+        line-height: 1.3;
     }
     
     .contact-section {
@@ -263,12 +263,12 @@ footer {
     
     .chinese-text p {
         font-size: 0.85rem;
-        line-height: 1.4;
+        line-height: 1.3;
     }
     
     .english-text p {
         font-size: 0.9rem;
-        line-height: 1.4;
+        line-height: 1.3;
     }
     
     .benefits-list {
@@ -276,8 +276,8 @@ footer {
     }
     
     .benefits-list li {
-        margin-bottom: 0.5rem;
-        line-height: 1.4;
+        margin-bottom: 0.3rem;
+        line-height: 1.2;
     }
 
     .bookmark-content span {
@@ -327,7 +327,7 @@ footer {
 
 .chinese-text p {
     font-size: 1.1rem;
-    line-height: 1.7;
+    line-height: 1.4;
 }
 
 @media screen and (max-width: 768px) {
@@ -400,7 +400,7 @@ footer {
 }
 
 .bookmark-content {
-    padding: 1.5rem;
+    padding: 1rem;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -413,14 +413,14 @@ footer {
 .bookmark-content i {
     font-size: 2rem;
     color: #07C160;  /* WeChat green */
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .bookmark-content span {
     font-size: 1.2rem;
     color: #6b4423;
     font-weight: bold;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
 }
 
 .bookmark-description {
