@@ -201,7 +201,6 @@ footer {
     
     .experience-card {
         padding: 1rem;
-        margin: 1rem 0;
     }
     
     .experience-image {
@@ -230,9 +229,7 @@ footer {
     }
     
     .description h3 {
-        font-size: 1.4rem;
-        margin-top: 1.25rem;
-        margin-bottom: 0.5rem;
+        margin: 0.75rem 0;
     }
     
     .description p {
@@ -272,12 +269,12 @@ footer {
     }
     
     .benefits-list {
+        margin: 0.5rem 0;
         padding-left: 1.25rem;
     }
     
     .benefits-list li {
-        margin-bottom: 0.3rem;
-        line-height: 1.2;
+        margin-bottom: 0.4rem;
     }
 
     .bookmark-content span {
@@ -286,6 +283,24 @@ footer {
 
     .bookmark-description {
         font-size: 0.9rem;
+    }
+
+    .bilingual-content {
+        gap: 1rem;
+        margin: 1rem 0;
+    }
+    
+    .english-text, .chinese-text {
+        padding: 0.5rem;
+    }
+    
+    .english-text {
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .chinese-text {
+        padding-top: 1rem;
     }
 }
 
