@@ -51,12 +51,13 @@ body {
 }
 
 .experience-image {
-    width: 60%;
-    max-width: 60%;
+    width: 100%;
+    max-width: 800px;
     height: auto;
     border-radius: 8px;
     margin: 1rem auto;
     display: block;
+    object-fit: contain;
 }
 
 /* Add media query for mobile devices */
@@ -64,7 +65,7 @@ body {
     .experience-image {
         width: 100%;    /* Take full width on mobile */
         max-width: 100%; /* Allow image to expand fully */
-        margin: 0.5rem 0; /* Adjust margins for mobile */
+        margin: 0.5rem auto; /* Adjust margins for mobile */
     }
 }
 
@@ -78,9 +79,10 @@ body {
 
 .gallery-image {
     width: 100%;
-    height: 400px;
+    height: auto;
+    min-height: 300px;
+    max-height: 600px;
     object-fit: cover;
-    object-position: center 20%;  /* Default position */
     border-radius: 8px;
     transition: transform 0.3s ease;
 }
@@ -123,8 +125,11 @@ body {
 
 .description {
     color: #5a4434;
-    text-align: justify;
+    text-align: left;
     font-size: 1.1rem;
+    width: 60%;
+    margin: 0 auto;
+    max-width: 60%;
 }
 
 .description h3 {
@@ -135,6 +140,7 @@ body {
 }
 
 .description p {
+    text-align: left;
     margin-bottom: 1rem;
     line-height: 1.4;
 }
@@ -252,9 +258,10 @@ footer {
     }
     
     .description {
+        width: 100%;
+        max-width: 100%;
         font-size: 0.95rem;
         line-height: 1.3;
-        margin-bottom: 0.75rem;
     }
     
     .description h3 {
@@ -538,4 +545,136 @@ p, h1, h2, h3, span, li, a {
 /* Add this class for the Brazil journey image */
 .position-adjust-up {
     object-position: center 10%; /* Moves focus point up */
+}
+
+@media screen and (max-width: 1024px) {
+    .experience-image {
+        max-width: 100%;
+    }
+    
+    .gallery-image {
+        min-height: 250px;
+        max-height: 500px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .experience-image {
+        width: 100%;
+        margin: 0.5rem auto;
+    }
+    
+    .gallery-image {
+        min-height: 200px;
+        max-height: 400px;
+    }
+    
+    .image-gallery {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .gallery-image {
+        min-height: 150px;
+        max-height: 300px;
+    }
+}
+
+.benefits-list {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+    max-width: 100%;
+}
+
+.benefits-list li {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    padding-right: 1rem;
+    text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+    .benefits-list li {
+        font-size: 0.95rem;
+        line-height: 1.4;
+        margin-bottom: 0.8rem;
+        padding-right: 0.5rem;
+    }
+}
+
+h1, h2, h3 {
+    line-height: 1.2;  /* Tighter line height for headings */
+    margin: 1.5rem 0;
+    word-spacing: 0.1em;  /* Add slight spacing between words */
+}
+
+/* Specific styling for competitive edge heading */
+.competitive-edge-title {
+    margin: 2rem 0 1rem 0;
+    font-size: 2rem;
+    color: #6b4423;
+    line-height: 1.3;
+    word-spacing: normal;  /* Reset word spacing for this title */
+}
+
+@media screen and (max-width: 768px) {
+    .competitive-edge-title {
+        font-size: 1.6rem;
+        margin: 1.5rem 0 0.8rem 0;
+    }
+}
+
+.business-header {
+    line-height: 1.2;
+    margin: 2rem 0 1.5rem;
+    color: #6b4423;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: none;
+    max-width: 100%;
+    text-align: left;  /* Ensure left alignment */
+}
+
+.business-header h2, 
+.business-header h3 {
+    text-align: left;
+    margin-left: 0;
+    padding-left: 0;
+    width: 100%;
+    display: block;  /* Ensure block-level display */
+}
+
+.business-header h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.business-header h3 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    word-spacing: normal;
+}
+
+@media screen and (max-width: 768px) {
+    .business-header {
+        padding: 0 0.5rem;  /* Add small padding on mobile */
+    }
+    
+    .business-header h2 {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+    
+    .business-header h3 {
+        font-size: 1.5rem;
+        line-height: 1.3;
+        margin-top: 1.5rem;
+    }
 }
