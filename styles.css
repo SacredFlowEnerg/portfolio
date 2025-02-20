@@ -59,6 +59,15 @@ body {
     display: block;
 }
 
+/* Add media query for mobile devices */
+@media screen and (max-width: 768px) {
+    .experience-image {
+        width: 100%;    /* Take full width on mobile */
+        max-width: 100%; /* Allow image to expand fully */
+        margin: 0.5rem 0; /* Adjust margins for mobile */
+    }
+}
+
 .image-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
