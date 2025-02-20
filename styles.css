@@ -262,8 +262,13 @@ footer {
     }
     
     .chinese-text p {
-        font-size: 1rem;
-        line-height: 1.6;
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+    
+    .english-text p {
+        font-size: 0.9rem;
+        line-height: 1.4;
     }
     
     .benefits-list {
@@ -321,8 +326,8 @@ footer {
 }
 
 .chinese-text p {
-    font-size: 1.2rem;
-    line-height: 1.8;
+    font-size: 1.1rem;
+    line-height: 1.7;
 }
 
 @media screen and (max-width: 768px) {
