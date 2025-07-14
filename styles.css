@@ -712,3 +712,28 @@ h1, h2, h3 {
         padding-left: 1.25rem;
     }
 }
+
+.disney-subtitle-container {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: move;
+    user-select: none;
+}
+
+.disney-subtitle {
+    text-align: center;
+    margin: 5px 0;
+}
+
+.disney-subtitle-original {
+    color: #ffffff;
+}
+
+.disney-subtitle-translated {
+    color: #ffeb3b;
+}

@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Disney+ Subtitle Translator",
+  "version": "1.0",
+  "description": "为 Disney+ 视频添加双语字幕支持，支持自定义样式和位置",
+  "permissions": [
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://*.disneyplus.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.disneyplus.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ]
+} 
